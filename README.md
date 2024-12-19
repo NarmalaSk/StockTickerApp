@@ -1,39 +1,55 @@
-Overview
-The StockTickerApp is a simple web application that provides real-time stock prices to users. It allows users to subscribe to stock price notifications at customizable intervals (e.g., 5, 10, 20, 30 minutes). This application is built for educational purposes and is free to use. Please note that notifications may sometimes be marked as spam by email providers, so be sure to check your spam folder if you don’t see the notifications in your inbox.
+# StockTickerApp
 
-Features
-Real-time Stock Price Updates: Get up-to-date stock prices using the Marketstack API.
-Custom Notification Intervals: Set notification intervals (5, 10, 20, 30 minutes) to get timely updates on selected stocks.
-Email Notifications: Notifications are sent to users via Mailjet API.
-Logging: Stock prices are logged into MongoDB for record-keeping and analysis.
-Tech Stack
-Frontend
-HTML: Basic structure of the webpage.
-CSS: Styling for a clean, responsive, and user-friendly interface.
-Backend
-Flask: The backend framework to handle API requests and send notifications.
-CORS: Cross-Origin Resource Sharing enabled for secure communication between frontend and backend.
-Database
-MongoDB: Used for logging stock prices and storing user subscription data.
-APIs
-Marketstack API: Provides real-time stock price data.
-Mailjet API: Handles email notifications to users.
-How to Set Up the App Locally
+![Screenshot 2024-12-19 232948](https://github.com/user-attachments/assets/3a42f47f-6b6d-49ef-9687-47849c284948)
+![WhatsApp Image 2024-12-19 at 23 34 58_1aba927b](https://github.com/user-attachments/assets/c8bc2d4f-851a-4d03-b200-7c56ed6da04d)
+
+## Overview
+
+The **StockTickerApp** is a simple web application that provides real-time stock prices to users. It allows users to subscribe to stock price notifications at customizable intervals (e.g., 5, 10, 20, 30 minutes). This application is built for educational purposes and is free to use. Please note that notifications may sometimes be marked as spam by email providers, so be sure to check your spam folder if you don’t see the notifications in your inbox.
+
+## Features
+
+- **Real-time Stock Price Updates**: Get up-to-date stock prices using the Marketstack API.
+- **Custom Notification Intervals**: Set notification intervals (5, 10, 20, 30 minutes) to get timely updates on selected stocks.
+- **Email Notifications**: Notifications are sent to users via Mailjet API.
+- **Logging**: Stock prices are logged into MongoDB for record-keeping and analysis.
+  
+## Tech Stack
+
+### Frontend
+- **HTML**: Basic structure of the webpage.
+- **CSS**: Styling for a clean, responsive, and user-friendly interface.
+
+### Backend
+- **Flask**: The backend framework to handle API requests and send notifications.
+- **CORS**: Cross-Origin Resource Sharing enabled for secure communication between frontend and backend.
+
+### Database
+- **MongoDB**: Used for logging stock prices and storing user subscription data.
+
+### APIs
+- **Marketstack API**: Provides real-time stock price data.
+- **Mailjet API**: Handles email notifications to users.
+
+## How to Set Up the App Locally
+
 To set up the StockTickerApp on your local machine, follow these steps:
 
-Prerequisites
+### Prerequisites
+
 Make sure you have the following installed on your system:
+- Python 3.x
+- pip (Python package installer)
+- MongoDB (can be installed locally or use a cloud service like MongoDB Atlas)
 
-Python 3.x
-pip (Python package installer)
-MongoDB (can be installed locally or use a cloud service like MongoDB Atlas)
-Step-by-Step Guide
-Clone the Repository: Open your terminal and run the following command to clone this repository:
+### Step-by-Step Guide
 
-bash
-Copy code
-git clone https://github.com/your-username/StockTickerApp.git
-cd StockTickerApp
+1. **Clone the Repository**:
+   Open your terminal and run the following command to clone this repository:
+
+   ```bash
+   git clone https://github.com/your-username/StockTickerApp.git
+   cd StockTickerApp
 Set Up Virtual Environment: It's recommended to use a virtual environment for managing dependencies. Run the following commands:
 
 bash
@@ -85,17 +101,3 @@ Email in Spam Folder: If you’re not receiving the stock price notifications in
 API Rate Limits: Be aware of the rate limits imposed by the Marketstack API. If you exceed the free tier’s limits, you may experience delays or failures in fetching stock prices.
 
 License
-This project is open-source and available under the MIT License.
-
-Notes on Improvements:
-Clarity: The README now provides clear and concise instructions for setting up the app locally, including environment variables, dependencies, and troubleshooting tips.
-Tech Stack: The tech stack section gives users insight into the tools and technologies used to build the app.
-Email Issues: A note about email notifications going to spam is added in case users face issues.
-Let me know if you need further customizations!
-
-
-
-
-
-
-
