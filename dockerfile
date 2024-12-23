@@ -13,5 +13,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Expose the port that Cloud Run will use
 EXPOSE 8080
 
-# Set the default command to run your app (with Gunicorn or Waitress)
- web: gunicorn app:app
+# Set the default command to run Gunicorn with the Flask app
+CMD ["gunicorn", "-b", "0.0.0.0:8080", "app:app"]
