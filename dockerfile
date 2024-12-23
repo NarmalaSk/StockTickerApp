@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8080
 
 # Set the default command to run your app (with Gunicorn or Waitress)
-CMD ["python", "app.py"]
+ web: gunicorn app:app
