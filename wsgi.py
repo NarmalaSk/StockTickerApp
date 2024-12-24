@@ -3,5 +3,5 @@ from waitress import serve
 import os
 
 if __name__ == "__main__":
-    # Use waitress for local development and production
-    serve(app, host='0.0.0.0', port=8080)
+    # Use waitress to serve the application
+    serve(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
