@@ -1,3 +1,4 @@
+[![CI](https://github.com/NarmalaSk/StockTickerApp/actions/workflows/action.yml/badge.svg)](https://github.com/NarmalaSk/StockTickerApp/actions/workflows/action.yml)
 # StockTickerApp
 
 ![Screenshot 2024-12-19 232948](https://github.com/user-attachments/assets/3a42f47f-6b6d-49ef-9687-47849c284948)
