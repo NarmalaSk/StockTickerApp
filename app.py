@@ -93,6 +93,9 @@ def process_request(stock_name, email, interval):
 @app.route('/')
 def home():
     return render_template('indexe.html')
+@app.route('/login')
+def login():
+    return "please lgoin to continue"
 
 @app.route('/submit', methods=['POST'])
 def submit():
