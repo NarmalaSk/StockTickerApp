@@ -85,7 +85,7 @@ def process_request(stock_name, email, interval):
         if stock_price:
             message = f"The current price of {stock_name} is: ₹{stock_price}"
         else:
-            message = f"Could not fetch the stock price for {stock_name}."
+            message = f"Could not fetch the stock price for this {stock_name}."
         logging.info(f"Sending email to {email}: {message}")
         send_email(from_email, email, message, stock_name, time_at_stock)
         time.sleep(interval * 60)
