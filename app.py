@@ -63,7 +63,7 @@ def get_stock_price(stock_symbol):
     data = response.json()
     if "data" in data and len(data["data"]) > 0:
         stock_data = data["data"][0]
-        return stock_data.get("close")
+        return stock_data.get("closed")
     return None
 
 def log_notification(stock_name, email, price, time_at_stock):
