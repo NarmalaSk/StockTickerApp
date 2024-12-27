@@ -13,4 +13,7 @@ jobs:
      steps:
       - name: checkrepo
         uses: actions/checkout@v3
+      - name: Dockerize ,build and push app
+        run: docker build . | echo "Dockerized"
+        
 
