@@ -44,7 +44,7 @@ def send_email(from_email, to_email, message, stock_name, time_at_stock):
                     }
                 ],
                 "Subject": f"Stock Tracker - {time_at_stock}",
-                "TextPart": f"The current price of {stock_name} is: ₹{message}\n\nUpgrade to our premium tier to get more detailed info and quicker updates on stock prices."
+                "TextPart": f"The current price!! of {stock_name} is: ₹{message}\n\nUpgrade to our premium tier to get more detailed info and quicker updates on stock prices."
             }
         ]
     }
