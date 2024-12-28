@@ -41,5 +41,8 @@ jobs:
           
       - name: deploy container to gcloud
         uses: google-github-actions/setup-gcloud@v4
-        run: gcloud run deploy service --image ${{ env.GAR_LOCATION }}/stockticker
-        
+        run: gcloud run deploy stockticker \
+            --image ${{ env.GAR_LOCATION }}/stockticker:latest \
+            --region ${{ env.REGION }} \
+            --platform managed \
+            --allow-unauthenticated
