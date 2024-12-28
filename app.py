@@ -95,7 +95,7 @@ def home():
     return render_template('indexe.html')
 @app.route('/login')
 def login():
-    return "please lgoin to continue"
+    return "please login to continue"
 
 @app.route('/submit', methods=['POST'])
 def submit():
