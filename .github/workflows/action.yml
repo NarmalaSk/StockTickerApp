@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD
 
 env:
   PROJECT_ID: redblueapp
@@ -32,9 +32,14 @@ jobs:
         run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev --quiet
 
       - name: Build Docker Image
-        run: docker build -t stockticker:tick .
+        run: docker build -t stockticker .
 
       - name: Tag and Push Image
         run: |
-          docker tag stockticker:tick ${{ env.GAR_LOCATION }}/stockticker:tick
-          docker push ${{ env.GAR_LOCATION }}/stockticker:tick
+          docker tag stockticker:tick ${{ env.GAR_LOCATION }}/stockticker
+          docker push ${{ env.GAR_LOCATION }}/stockticker
+          
+      - name: deploy container to gcloud
+        uses: google-github-actions/setup-gcloud@v4
+        run: gcloud run deploy service --image ${{ env.GAR_LOCATION }}/stockticker
+        
