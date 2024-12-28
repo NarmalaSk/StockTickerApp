@@ -4,34 +4,35 @@ env:
   PROJECT_ID: redblueapp
   REGION: us-central1
   GAR_LOCATION: us-central1-docker.pkg.dev/redblueapp/stock
+
 on:
-   push:
+  push:
     branches:
-        - main
+      - main
 
 jobs:
   build:
-     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-     steps:
-      - name: checkrepo
+    steps:
+      - name: Checkout Repository
         uses: actions/checkout@v3
-      - name: Dockerize ,build and push app
-        run: docker build . | echo "Dockerized"
-      - name: gcloud auth
+
+      - name: Authenticate with Google Cloud
         uses: google-github-actions/auth@v1
-        with: 
+        with:
           credentials_json: "${{ secrets.KEY }}"
 
-      - name: "Set up Cloud SDK"
-        uses: "google-github-actions/setup-gcloud@v1"
-        run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev --quiet
-        
-      - name: "Tag image"
-        run: docker tag us-central1-docker.pkg.dev/redblueapp/stock
-        
-      - name: "Push image"
-        run: docker push ${{ env.GAR_LOCATION }}
-        
-        
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          project_id: ${{ env.PROJECT_ID }}
 
+      - name: Configure Docker for Artifact Registry
+        run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev --quiet
+
+      - name: Build Docker Image
+        run: docker build -t ${{ env.GAR_LOCATION }} .
+
+      - name: Push Docker Image
+        run: docker push ${{ env.GAR_LOCATION }}
