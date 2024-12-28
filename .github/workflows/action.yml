@@ -32,16 +32,16 @@ jobs:
         run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev --quiet
 
       - name: Build Docker Image
-        run: docker build -t stockticker .
+        run: docker build -t stockticker:latest .
 
       - name: Tag and Push Image
         run: |
-          docker tag stockticker:tick ${{ env.GAR_LOCATION }}/stockticker
-          docker push ${{ env.GAR_LOCATION }}/stockticker
+          docker tag stockticker:latest ${{ env.GAR_LOCATION }}/stockticker:latest
+          docker push ${{ env.GAR_LOCATION }}/stockticker:latest
           
-      - name: deploy container to gcloud
-        uses: google-github-actions/setup-gcloud@v4
-        run: gcloud run deploy stockticker \
+      - name: Deploy Container to Cloud Run
+        run: |
+          gcloud run deploy stockticker \
             --image ${{ env.GAR_LOCATION }}/stockticker:latest \
             --region ${{ env.REGION }} \
             --platform managed \
