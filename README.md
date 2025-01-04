@@ -102,3 +102,4 @@ Email in Spam Folder: If you’re not receiving the stock price notifications in
 API Rate Limits: Be aware of the rate limits imposed by the Marketstack API. If you exceed the free tier’s limits, you may experience delays or failures in fetching stock prices.
 
 License
+[contribution guidelines](contribution.md)
